@@ -1,4 +1,4 @@
-html = Nokogiri.HTML5(content)
+html = Nokogiri.HTML(content)
 
 list = html.css('body div')
 p list
