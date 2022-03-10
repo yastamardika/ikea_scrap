@@ -6,7 +6,16 @@ pages << {
       category: "Newest Product"
     },
     driver:{
-        pre_code: "page.once('load', () => console.log('Page loaded!'));
+        pre_code: "
+        await page.setViewport({
+          width: 1920 + Math.floor(Math.random() * 100),
+          height: 3000 + Math.floor(Math.random() * 100),
+          deviceScaleFactor: 1,
+          hasTouch: false,
+          isLandscape: false,
+          isMobile: false,
+        });
+        page.once('load', () => console.log('Page loaded!'));
         await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);
       await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);
       await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);
